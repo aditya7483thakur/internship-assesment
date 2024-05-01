@@ -28,12 +28,12 @@ export default function Home() {
   const handleColorChange = (id: string, newValue: string) => {
     setColors((prevColors) =>
       prevColors.map((color) =>
-        color.id === id ? { ...color, value: newValue, key: color.id } : color
+        color.id === id ? { ...color, value: newValue } : color
       )
     );
   };
 
-  const getTaskPos = (id: string) =>
+  const getColorPos = (id: string) =>
     colors.findIndex((color) => color.id === id);
 
   const handleDragEnd = (event: any) => {
@@ -42,8 +42,8 @@ export default function Home() {
     if (active.id === over.id) return;
 
     setColors((colors) => {
-      const orginalPos = getTaskPos(active.id);
-      const newPos = getTaskPos(over.id);
+      const orginalPos = getColorPos(active.id);
+      const newPos = getColorPos(over.id);
 
       return arrayMove(colors, orginalPos, newPos);
     });

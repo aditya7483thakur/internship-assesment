@@ -4,7 +4,6 @@ import React from "react";
 import {
   SortableContext,
   horizontalListSortingStrategy,
-  verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import Color from "./Color";
 
